@@ -1,0 +1,71 @@
+.parent {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.coralbox {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.board {
+  background: black;
+  display: -ms-grid;
+  display: grid;
+  -webkit-transform: rotate(-30deg) skew(25deg) perspective(50em);
+          transform: rotate(-30deg) skew(25deg) perspective(50em);
+  -ms-grid-columns: 100px 100px 100px;
+      grid-template-columns: 100px 100px 100px;
+  -ms-grid-rows: 100px 100px 100px;
+      grid-template-rows: 100px 100px 100px;
+  -webkit-box-shadow: -40px 40px 40px rgba(0, 0, 0, 0.5);
+          box-shadow: -40px 40px 40px rgba(0, 0, 0, 0.5);
+}
+
+.board div {
+  background-color: #4a4e69;
+  border: 2px solid #9a8c98;
+}
+
+.board:hover {
+  cursor: pointer;
+  -webkit-transform: rotate(-30deg) skew(25deg) perspective(50em);
+          transform: rotate(-30deg) skew(25deg) perspective(50em);
+  -webkit-transition: 2s all ease;
+  transition: 2s all ease;
+  -webkit-box-shadow: -80px 80px 80px rgba(0, 0, 0, 0.5);
+          box-shadow: -80px 80px 80px rgba(0, 0, 0, 0.5);
+}
+
+.board:before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -20px;
+  height: 100%;
+  width: 20px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9a8c98), color-stop(1%, #9a8c98), color-stop(1%, #4a4e69), color-stop(33%, #4a4e69), color-stop(34%, #9a8c98), color-stop(34%, #4a4e69), color-stop(67%, #4a4e69), color-stop(67%, #9a8c98), color-stop(68%, #4a4e69), color-stop(99%, #4a4e69), color-stop(99%, #9a8c98), to(#9a8c98));
+  background: linear-gradient(180deg, #9a8c98 0%, #9a8c98 1%, #4a4e69 1%, #4a4e69 33%, #9a8c98 34%, #4a4e69 34%, #4a4e69 67%, #9a8c98 67%, #4a4e69 68%, #4a4e69 99%, #9a8c98 99%, #9a8c98 100%);
+  background-size: 5px;
+  -webkit-transform: rotate(0deg) skewY(-45deg);
+          transform: rotate(0deg) skewY(-45deg);
+}
+
+.board:after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: -10px;
+  height: 20px;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(#9a8c98), color-stop(1%, #9a8c98), color-stop(1%, #4a4e69), color-stop(99%, #4a4e69), color-stop(99%, #9a8c98), to(#9a8c98));
+  background: linear-gradient(90deg, #9a8c98 0%, #9a8c98 1%, #4a4e69 1%, #4a4e69 99%, #9a8c98 99%, #9a8c98 100%);
+  background-size: 120px;
+  -webkit-transform: rotate(0deg) skewX(-45deg);
+          transform: rotate(0deg) skewX(-45deg);
+}
+/*# sourceMappingURL=titlebar.css.map */
