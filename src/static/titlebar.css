@@ -1,23 +1,18 @@
-.parent {
+.parent-container {
   display: -ms-grid;
   display: grid;
   place-items: center;
   height: 100%;
   width: 100%;
-}
-
-.coralbox {
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .board {
-  background: black;
+  position: relative;
   display: -ms-grid;
   display: grid;
-  -webkit-transform: rotate(-30deg) skew(25deg) perspective(50em);
-          transform: rotate(-30deg) skew(25deg) perspective(50em);
   -ms-grid-columns: 100px 100px 100px;
       grid-template-columns: 100px 100px 100px;
   -ms-grid-rows: 100px 100px 100px;
@@ -26,15 +21,17 @@
           box-shadow: -40px 40px 40px rgba(0, 0, 0, 0.5);
 }
 
-.board div {
+.box {
+  position: relative;
   background-color: #4a4e69;
   border: 2px solid #9a8c98;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
 }
 
 .board:hover {
   cursor: pointer;
-  -webkit-transform: rotate(-30deg) skew(25deg) perspective(50em);
-          transform: rotate(-30deg) skew(25deg) perspective(50em);
   -webkit-transition: 2s all ease;
   transition: 2s all ease;
   -webkit-box-shadow: -80px 80px 80px rgba(0, 0, 0, 0.5);
@@ -48,8 +45,7 @@
   left: -20px;
   height: 100%;
   width: 20px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#9a8c98), color-stop(1%, #9a8c98), color-stop(1%, #4a4e69), color-stop(33%, #4a4e69), color-stop(34%, #9a8c98), color-stop(34%, #4a4e69), color-stop(67%, #4a4e69), color-stop(67%, #9a8c98), color-stop(68%, #4a4e69), color-stop(99%, #4a4e69), color-stop(99%, #9a8c98), to(#9a8c98));
-  background: linear-gradient(180deg, #9a8c98 0%, #9a8c98 1%, #4a4e69 1%, #4a4e69 33%, #9a8c98 34%, #4a4e69 34%, #4a4e69 67%, #9a8c98 67%, #4a4e69 68%, #4a4e69 99%, #9a8c98 99%, #9a8c98 100%);
+  background: #4a4e69;
   background-size: 5px;
   -webkit-transform: rotate(0deg) skewY(-45deg);
           transform: rotate(0deg) skewY(-45deg);
@@ -62,10 +58,21 @@
   left: -10px;
   height: 20px;
   width: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#9a8c98), color-stop(1%, #9a8c98), color-stop(1%, #4a4e69), color-stop(99%, #4a4e69), color-stop(99%, #9a8c98), to(#9a8c98));
-  background: linear-gradient(90deg, #9a8c98 0%, #9a8c98 1%, #4a4e69 1%, #4a4e69 99%, #9a8c98 99%, #9a8c98 100%);
+  background: #4a4e69;
   background-size: 120px;
   -webkit-transform: rotate(0deg) skewX(-45deg);
           transform: rotate(0deg) skewX(-45deg);
+}
+
+.tree {
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  background: white;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=titlebar.css.map */

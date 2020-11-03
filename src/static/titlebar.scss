@@ -1,58 +1,33 @@
-.parent {
+.parent-container {
   display: grid;
   place-items: center;
   height: 100%;
   width: 100%;
+  position: absolute;
+  box-sizing: border-box;
 }
 
-.coralbox {
+.board {
+  position: relative;
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  box-shadow: -40px 40px 40px rgba(0, 0, 0, 0.5);
+  //transform: rotate(-30deg) skew(25deg);
+}
+
+.box {
+  position: relative;
+  background-color: #4a4e69;
+  border: 2px solid #9a8c98;
   display: grid;
   place-items: center;
 }
 
-.board {
-  background: black;
-  // display: inline-block;
-  // position: relative;
-  display: grid;
-  // transform: rotate(150deg) skew(25deg);
-  transform: rotate(-30deg) skew(25deg) perspective(50em);
-  grid-template-columns: 100px 100px 100px;
-  grid-template-rows: 100px 100px 100px;
-  // grid-gap: 2px;
-  // perspective: 50em;
-  // transition: 0.5s all ease;
-  // justify-content: center;
-  box-shadow: -40px 40px 40px rgba(0, 0, 0, 0.5);
-  // transition: all linear 1s;
-  // transition-property: box-shadow, top;
-  // transition-duration: 0.5s 2s;
-  // animation: myanimation 500ms ease-in-out;
-}
-.board div {
-  background-color: #4a4e69;
-  border: 2px solid #9a8c98;
-}
-
-// @keyframes myanimation {
-//   0% {
-//     top: 5%;
-//   }
-//   100% {
-//     top: 0%;
-//   }
-// }
-
 .board:hover {
   cursor: pointer;
-  transform: rotate(-30deg) skew(25deg) perspective(50em);
-  // transform: rotate(-30deg) skew(25deg);
   transition: 2s all ease;
   box-shadow: -80px 80px 80px rgba(0, 0, 0, 0.5);
-  // transition-duration: 2s;
-  // z-index: 400;
-  // position: relative;
-  // top: -10px;
 }
 
 .board:before {
@@ -62,21 +37,7 @@
   left: -20px;
   height: 100%;
   width: 20px;
-  background: linear-gradient(
-    180deg,
-    rgba(154, 140, 152, 1) 0%,
-    rgba(154, 140, 152, 1) 1%,
-    rgba(74, 78, 105, 1) 1%,
-    rgba(74, 78, 105, 1) 33%,
-    rgba(154, 140, 152, 1) 34%,
-    rgba(74, 78, 105, 1) 34%,
-    rgba(74, 78, 105, 1) 67%,
-    rgba(154, 140, 152, 1) 67%,
-    rgba(74, 78, 105, 1) 68%,
-    rgba(74, 78, 105, 1) 99%,
-    rgba(154, 140, 152, 1) 99%,
-    rgba(154, 140, 152, 1) 100%
-  );
+  background: #4a4e69;
   background-size: 5px;
   transform: rotate(0deg) skewY(-45deg);
 }
@@ -88,69 +49,25 @@
   left: -10px;
   height: 20px;
   width: 100%;
-  background: linear-gradient(
-    90deg,
-    rgba(154, 140, 152, 1) 0%,
-    rgba(154, 140, 152, 1) 1%,
-    rgba(74, 78, 105, 1) 1%,
-    rgba(74, 78, 105, 1) 99%,
-    rgba(154, 140, 152, 1) 99%,
-    rgba(154, 140, 152, 1) 100%
-  );
+  background: #4a4e69;
   background-size: 120px;
   transform: rotate(0deg) skewX(-45deg);
 }
 
-// @keyframes simple {
-//   50% {
-//     transform: translateX(10px);
-//     opacity: 0.5;
-//   }
-//   100% {
-//     transform: translateX(10px);
-//     opacity: 0;
-//   }
-// }
+.tree {
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  background: white;
+  display: grid;
+  justify-content: center;
+  //transform: skew(-25deg) rotate(30deg);
+}
 
-// @keyframes simple1 {
-//   50% {
-//     transform: translateX(-10px);
-//     opacity: 0.5;
-//   }
-//   100% {
-//     transform: translateX(-10px);
-//     opacity: 0;
-//   }
-// }
-
-// @keyframes entry {
-//   0% {
-//     top: -20%;
-//     opacity: 0.1;
-//   }
-//   100% {
-//     top: 0%;
-//   }
-// }
-
-// .board span:nth-child(odd) {
-//   background: linear-gradient(
-//     90deg,
-//     #f1f1f1 0%,
-//     #f1f1f1 50%,
-//     #333 50%,
-//     #333 100%
-//   );
-//   background-size: 120px;
-// }
-
-// .board span:nth-child(even) {
-//   background: linear-gradient(
-//     90deg,
-//     #333 0%,
-//     #333 50%,
-//     #f1f1f1 50%,
-//     #f1f1f1 100%
-//   );
-//   background-size: 120px;
+// .model {
+//   // position: absolute;
+//   width: 30px;
+//   bottom: 0;
+//   height: 300px;
+//   background-color: rgb(183, 88, 207);
 // }
