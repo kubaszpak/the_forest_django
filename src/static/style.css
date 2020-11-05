@@ -1,42 +1,13 @@
 * {
-  background: transparent;
   border: 0;
   margin: 0;
   padding: 0;
-  vertical-align: baseline;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
 body {
-  line-height: 1;
   display: block;
-}
-
-input,
-select {
-  vertical-align: middle;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.floatLeft {
-  float: left;
-}
-
-.floatRight {
-  float: right;
-}
-
-.clear {
-  clear: both;
 }
 
 html,
