@@ -4,6 +4,8 @@
   place-items: center;
   height: 100%;
   width: 100%;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
 }
 
 .board {
@@ -64,20 +66,13 @@
 
 .tree {
   position: absolute;
-  width: 140px;
+  width: 100px;
   height: 200px;
   -webkit-transform: skew(-25deg) rotate(30deg);
           transform: skew(-25deg) rotate(30deg);
-  bottom: 0;
-  left: 50%;
+  background: white;
+  -o-object-fit: contain;
+     object-fit: contain;
   z-index: 1;
-}
-
-.box:nth-of-type(even) .tree {
-  background-color: pink;
-}
-
-.box:nth-of-type(odd) .tree {
-  background-color: blue;
 }
 /*# sourceMappingURL=titlebar.css.map */

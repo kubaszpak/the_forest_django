@@ -3,6 +3,8 @@
   place-items: center;
   height: 100%;
   width: 100%;
+  perspective: 1000px;
+  // perspective-origin: center;
 }
 
 .board {
@@ -10,6 +12,8 @@
   grid-template-columns: repeat(3, 100px);
   grid-template-rows: repeat(3, 100px);
   box-shadow: -40px 40px 40px rgba(0, 0, 0, 0.5);
+  // transform: rotate(-30deg) skew(25deg) rotateX(30deg) translateZ(50px);
+  // transform: rotateX(30deg) translateZ(20px) rotate(45deg);
   transform: rotate(-30deg) skew(25deg);
 }
 
@@ -53,21 +57,23 @@
 
 .tree {
   position: absolute;
-  width: 140px;
+  width: 100px;
+  // auto?
   height: 200px;
   transform: skew(-25deg) rotate(30deg);
-  bottom: 0;
-  left: 50%;
+  background: white;
+  object-fit: contain;
+  // bottom: 0;
   z-index: 1;
 }
 
-.box:nth-of-type(even) .tree {
-  background-color: pink;
-}
+// .box:nth-of-type(even) .tree {
+//   background-color: rgb(83, 68, 88);
+// }
 
-.box:nth-of-type(odd) .tree {
-  background-color: blue;
-}
+// .box:nth-of-type(odd) .tree {
+//   background-color: rgb(30, 30, 87);
+// }
 
 // .model {
 //   postion: absolute;
