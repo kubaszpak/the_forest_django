@@ -21,8 +21,6 @@
   position: relative;
   background-color: #4a4e69;
   border: 2px solid #9a8c98;
-  display: grid;
-  place-items: center;
 }
 
 .board:hover {
@@ -57,28 +55,37 @@
 
 .tree {
   position: absolute;
-  width: 100px;
-  // auto?
-  height: 200px;
   transform: skew(-25deg) rotate(30deg);
-  background: white;
-  object-fit: contain;
-  // bottom: 0;
-  z-index: 1;
+  background: transparent;
+  bottom: -10%;
+  left: 60%;
+  // object-fit: contain;
 }
 
-// .box:nth-of-type(even) .tree {
-//   background-color: rgb(83, 68, 88);
-// }
-
-// .box:nth-of-type(odd) .tree {
-//   background-color: rgb(30, 30, 87);
-// }
-
-// .model {
-//   postion: absolute;
-//   width: 30px;
-//   bottom: 0;
-//   height: 300px;
-//   background-color: rgb(183, 88, 207);
-// }
+#first-box {
+  z-index: 3;
+}
+#second-box {
+  z-index: 2;
+}
+#third-box {
+  z-index: 1;
+}
+#fourth-box {
+  z-index: 4;
+}
+#fifth-box {
+  z-index: 3;
+}
+#sixth-box {
+  z-index: 2;
+}
+#seventh-box {
+  z-index: 5;
+}
+#eighth-box {
+  z-index: 4;
+}
+#ninth-box {
+  z-index: 3;
+}

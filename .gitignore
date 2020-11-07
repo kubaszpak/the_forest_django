@@ -136,3 +136,6 @@ secrets.py
 
 # styles
 src/templates/styles
+
+# garbage
+garbage.txt

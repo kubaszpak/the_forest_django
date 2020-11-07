@@ -25,9 +25,6 @@
   position: relative;
   background-color: #4a4e69;
   border: 2px solid #9a8c98;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
 }
 
 .board:hover {
@@ -66,13 +63,46 @@
 
 .tree {
   position: absolute;
-  width: 100px;
-  height: 200px;
   -webkit-transform: skew(-25deg) rotate(30deg);
           transform: skew(-25deg) rotate(30deg);
-  background: white;
-  -o-object-fit: contain;
-     object-fit: contain;
+  background: transparent;
+  bottom: -10%;
+  left: 60%;
+}
+
+#first-box {
+  z-index: 3;
+}
+
+#second-box {
+  z-index: 2;
+}
+
+#third-box {
   z-index: 1;
 }
-/*# sourceMappingURL=titlebar.css.map */
+
+#fourth-box {
+  z-index: 4;
+}
+
+#fifth-box {
+  z-index: 3;
+}
+
+#sixth-box {
+  z-index: 2;
+}
+
+#seventh-box {
+  z-index: 5;
+}
+
+#eighth-box {
+  z-index: 4;
+}
+
+#ninth-box {
+  z-index: 3;
+}
+/*# sourceMappingURL=map.css.map */
