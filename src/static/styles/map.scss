@@ -3,8 +3,6 @@
   place-items: center;
   height: 100%;
   width: 100%;
-  perspective: 1000px;
-  // perspective-origin: center;
 }
 
 .animated-container {
@@ -18,12 +16,11 @@
 
 .board {
   display: grid;
-  grid-template-columns: repeat(3, 10vh);
-  grid-template-rows: repeat(3, 10vh);
+  grid-template-columns: repeat(3, 10vmin);
+  grid-template-rows: repeat(3, 10vmin);
   box-shadow: -40px 40px 40px rgba(0, 0, 0, 0.5);
-  // transform: rotate(-30deg) skew(25deg) rotateX(30deg) translateZ(50px);
-  // transform: rotateX(30deg) translateZ(20px) rotate(45deg);
-  animation: slideBackDown 1s ease-out 0s normal 1 both;
+  transition: box-shadow 1s ease;
+  transition: transform 0.5s ease-in-out;
 }
 
 @keyframes slideToTheLeft {
@@ -31,7 +28,7 @@
     transform: translateX(0) rotate(-30deg) skew(25deg);
   }
   100% {
-    transform: translateX(-100%) rotate(-30deg) skew(25deg);
+    transform: translateX(-30vw) rotate(-30deg) skew(25deg);
   }
 }
 
@@ -44,31 +41,8 @@
 
 .board:hover {
   cursor: pointer;
-  transition: 2s all ease;
   box-shadow: -80px 80px 80px rgba(0, 0, 0, 0.5);
-  animation-name: slideUp;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  // animation-delay: 2s;
-  animation-fill-mode: both;
-}
-
-@keyframes slideUp {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(10%);
-  }
-}
-
-@keyframes slideBackDown {
-  0% {
-    transform: translateY(10%);
-  }
-  100% {
-    transform: translateY(0);
-  }
+  transform: translateY(-10%);
 }
 
 .board:before {
@@ -101,12 +75,10 @@
   background: transparent;
   bottom: -10%;
   left: 60%;
-  // border: 2px solid white;
-  // object-fit: contain;
+  object-fit: contain;
 }
 img {
-  width: 13vh;
-  opacity: 0%;
+  width: 13vmin;
 }
 
 #first-box {
