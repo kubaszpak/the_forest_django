@@ -7,8 +7,6 @@
 }
 
 .animated-container {
-  -webkit-transform: translateX(-100%) rotate(-30deg) skew(25deg);
-          transform: translateX(-100%) rotate(-30deg) skew(25deg);
   -webkit-animation-name: slideToTheLeft;
           animation-name: slideToTheLeft;
   -webkit-animation-duration: 1s;
@@ -46,8 +44,8 @@
             transform: translateX(0) rotate(-30deg) skew(25deg);
   }
   100% {
-    -webkit-transform: translateX(-30vw) rotate(-30deg) skew(25deg);
-            transform: translateX(-30vw) rotate(-30deg) skew(25deg);
+    -webkit-transform: translateX(-25vw) rotate(-30deg) skew(25deg);
+            transform: translateX(-25vw) rotate(-30deg) skew(25deg);
   }
 }
 
@@ -57,8 +55,8 @@
             transform: translateX(0) rotate(-30deg) skew(25deg);
   }
   100% {
-    -webkit-transform: translateX(-30vw) rotate(-30deg) skew(25deg);
-            transform: translateX(-30vw) rotate(-30deg) skew(25deg);
+    -webkit-transform: translateX(-25vw) rotate(-30deg) skew(25deg);
+            transform: translateX(-25vw) rotate(-30deg) skew(25deg);
   }
 }
 
@@ -73,8 +71,8 @@
   cursor: pointer;
   -webkit-box-shadow: -80px 80px 80px rgba(0, 0, 0, 0.5);
           box-shadow: -80px 80px 80px rgba(0, 0, 0, 0.5);
-  -webkit-transform: translateY(-10%);
-          transform: translateY(-10%);
+  -webkit-transform: translateY(-5vh);
+          transform: translateY(-5vh);
 }
 
 .board:before {

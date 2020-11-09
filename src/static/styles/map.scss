@@ -6,7 +6,6 @@
 }
 
 .animated-container {
-  transform: translateX(-100%) rotate(-30deg) skew(25deg);
   animation-name: slideToTheLeft;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
@@ -28,7 +27,7 @@
     transform: translateX(0) rotate(-30deg) skew(25deg);
   }
   100% {
-    transform: translateX(-30vw) rotate(-30deg) skew(25deg);
+    transform: translateX(-25vw) rotate(-30deg) skew(25deg);
   }
 }
 
@@ -42,7 +41,7 @@
 .board:hover {
   cursor: pointer;
   box-shadow: -80px 80px 80px rgba(0, 0, 0, 0.5);
-  transform: translateY(-10%);
+  transform: translateY(-5vh);
 }
 
 .board:before {
