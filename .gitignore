@@ -139,3 +139,8 @@ src/templates/styles
 
 # garbage
 garbage.txt
+
+node_modules/
+node/
+home.html
+styles/

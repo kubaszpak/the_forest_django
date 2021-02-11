@@ -1,9 +1,32 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: block;
+}
+
+html,
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  background-color: #22223b;
+  color: white;
+  height: 100%;
+  width: 100%;
+}
+
 .parent-container {
   display: -ms-grid;
   display: grid;
   place-items: center;
   height: 100%;
   width: 100%;
+  position: fixed;
 }
 
 .animated-container {
@@ -151,4 +174,4 @@ img {
 #ninth-box {
   z-index: 3;
 }
-/*# sourceMappingURL=map.css.map */
+/*# sourceMappingURL=index.css.map */
