@@ -1,67 +1,48 @@
 import React, { Component } from "react";
-import { render } from "react-dom";
+import { render, Redirect } from "react-dom";
 
 export default class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      roomCode: null,
+    };
+  }
+
+  async componentDidMount() {
+    fetch("/api/user-in-room")
+      .then((response) => response.json())
+      .then((data) => {
+        if (response.ok) {
+          this.setState({
+            roomCode: data.code,
+          });
+        }
+      });
+  }
+
+  handleCreateNewRoom() {
+    const requestOptions = {
+      method: "POST",
+      header: { ContentType: "application/json" },
+    };
+    fetch("/api/create-room", requestOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        if (response.ok) {
+          this.props.history.push(`/room/${data.code}`);
+        }
+      });
   }
 
   render() {
-    return (
-    <>
-    <div class = "parent-container">
-    <div class="animated-container">
-    <div class = "board">
-      <div class="box" id="first-box">
-        <div class="tree">
-          <img src="static/images/building1.svg" alt="My image"/>
-          </div>
-      </div>
-      <div class="box" id="second-box">
-        <div class="tree">
-          <img src="static/images/building1.svg" alt="My image"/>
-      </div>
-      </div>
-      <div class="box" id="third-box">
-        <div class="tree">
-          <img src="static/images/building1.svg" alt="My image"/>
-        </div>
-      </div>
-      <div class="box" id="fourth-box">
-        <div class="tree">
-          <img src="static/images/building1.svg" alt="My image"/>
-        </div>
-      </div>
-      <div class="box" id="fifth-box">
-        <div class="tree">
-          <img src="static/images/building1.svg" alt="My image"/>
-        </div>
-      </div>
-      <div class="box" id="sixth-box">
-        <div class="tree">
-          <img src="static/images/building1.svg" alt="My image"/>
-        </div>
-      </div>
-      <div class="box" id="seventh-box">
-        <div class="tree">
-          <img src="static/images/building1.svg" alt="My image"/>
-        </div>
-      </div>
-      <div class="box" id="eighth-box">
-        <div class="tree">
-          <img src="static/images/building1.svg" alt="My image"/>
-        </div>
-      </div>
-      <div class="box" id="ninth-box">
-        <div class="tree">
-          <img src="static/images/building1.svg" alt="My image"/>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-  </>
-  );
+    return this.state.roomCode ? (
+      <Redirect to={`/room/${this.state.roomCode}`} />
+    ) : (
+      () => {
+        this.handleCreateNewRoom();
+      }
+    );
   }
 }
 

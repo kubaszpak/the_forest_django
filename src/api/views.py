@@ -9,3 +9,5 @@ from .models import Map
 class MapListView(generics.ListAPIView):
     queryset = Map.objects.all()
     serializer_class = MapSerializer
+
+    

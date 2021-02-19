@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import home_view
+from .views import index
 
 urlpatterns = [
-    path('', home_view),
+    path('', index),
+    path('room/<str:code>', index)
 ]
