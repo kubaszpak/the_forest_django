@@ -1,5 +1,10 @@
 import React, { Component } from "react";
-import { render, Redirect } from "react-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
 export default class App extends Component {
   constructor(props) {
@@ -35,13 +40,37 @@ export default class App extends Component {
       });
   }
 
+  clearRoomCodeFromState(){
+    this.setState = {
+      roomCode: null,
+    };
+  }
+
   render() {
-    return this.state.roomCode ? (
-      <Redirect to={`/room/${this.state.roomCode}`} />
-    ) : (
-      () => {
-        this.handleCreateNewRoom();
-      }
+    return (
+      <Router>
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => {
+              this.state.roomCode ? (
+                <Redirect to={`/room/${this.state.roomCode}`} />
+              ) : (
+                () => {
+                  this.handleCreateNewRoom();
+                }
+              );
+            }}
+          />
+          <Route
+            path="/room/:roomCode"
+            render={(props) => {
+              <Map {...props} leaveRoomCallback={this.clearRoomCodeFromState} />;
+            }}
+          />
+        </Switch>
+      </Router>
     );
   }
 }
