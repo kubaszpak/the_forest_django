@@ -20,6 +20,19 @@ body {
   width: 100%;
 }
 
+#main {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
 .parent-container {
   display: -ms-grid;
   display: grid;
@@ -173,5 +186,13 @@ img {
 
 #ninth-box {
   z-index: 3;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 /*# sourceMappingURL=index.css.map */

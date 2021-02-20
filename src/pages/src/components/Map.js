@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import Box from "./Box";
 
-export default class App extends Component {
+export default class Map extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     return (
-        <div class="parent-container">
+      <div class="parent-container">
         <div class="animated-container">
           <div class="board">
             <Box id="first-box"></Box>
