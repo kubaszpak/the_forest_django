@@ -1,22 +1,40 @@
-import React from "react";
-import {
-  BrowserRouter,
-  Switch,
-  Route
-} from "react-router-dom";
-import HomePage from "./HomePage.js";
+import React, { useState } from "react";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import HomePage from "./HomePage";
+import Room from "./Room";
 
-function App() {
+function App(props) {
+  const [roomCode, setRoomCode] = useState("HEJKA");
+
+  const clearRoomCode = () => {
+    setRoomCode(null);
+  };
 
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={HomePage}/>
-        <Route path = "/room/:roomCode" render = {
-          () => {
-            this.renderNewRoom();
-          }
-        }/>
+        <Route
+          exact
+          path="/"
+          render={() => {
+            return roomCode ? (
+              <Redirect to={`/room/${roomCode}`} />
+            ) : (
+              <HomePage />
+            );
+          }}
+        />
+        <Route
+          path="/room/:roomCode"
+          render={(props) => {
+            return (
+              <Room
+                {...props}
+                leaveRoomCallback={clearRoomCode}
+              />
+            );
+          }}
+        />
       </Switch>
     </BrowserRouter>
   );

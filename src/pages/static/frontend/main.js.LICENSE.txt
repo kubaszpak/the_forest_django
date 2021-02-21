@@ -4,7 +4,9 @@ object-assign
 @license MIT
 */
 
-/*! ./HomePage.js */
+/*! ./HomePage */
+
+/*! ./Room */
 
 /*! ./cjs/react-dom.production.min.js */
 
@@ -67,6 +69,10 @@ object-assign
 /*!*******************************!*\
   !*** ./src/components/App.js ***!
   \*******************************/
+
+/*!********************************!*\
+  !*** ./src/components/Room.js ***!
+  \********************************/
 
 /*!************************************!*\
   !*** ./src/components/HomePage.js ***!
