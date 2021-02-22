@@ -4,7 +4,7 @@ import HomePage from "./HomePage";
 import Room from "./Room";
 
 function App(props) {
-  const [roomCode, setRoomCode] = useState("HEJKA");
+  const [roomCode, setRoomCode] = useState(null);
 
   const clearRoomCode = () => {
     setRoomCode(null);
@@ -27,12 +27,7 @@ function App(props) {
         <Route
           path="/room/:roomCode"
           render={(props) => {
-            return (
-              <Room
-                {...props}
-                leaveRoomCallback={clearRoomCode}
-              />
-            );
+            return <Room {...props} leaveRoomCallback={clearRoomCode} />;
           }}
         />
       </Switch>
