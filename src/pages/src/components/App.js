@@ -1,20 +1,38 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
-import Main from "./Main";
+import React, { useState } from "react";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import HomePage from "./HomePage";
+import Room from "./Room";
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-  }
+function App(props) {
+  const [roomCode, setRoomCode] = useState(null);
 
-  render() {
-    return (
-      <div className="center">
-        <Main />
-      </div>
-    );
-  }
+  const clearRoomCode = () => {
+    setRoomCode(null);
+  };
+
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route
+          exact
+          path="/"
+          render={() => {
+            return roomCode ? (
+              <Redirect to={`/room/${roomCode}`} />
+            ) : (
+              <HomePage />
+            );
+          }}
+        />
+        <Route
+          path="/room/:roomCode"
+          render={(props) => {
+            return <Room {...props} leaveRoomCallback={clearRoomCode} />;
+          }}
+        />
+      </Switch>
+    </BrowserRouter>
+  );
 }
 
-const appDiv = document.getElementById("app");
-render(<App />, appDiv);
+export default App;

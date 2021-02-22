@@ -13,24 +13,97 @@ body {
 html,
 body {
   font-family: "Montserrat", sans-serif;
-  font-weight: regular;
   background-color: #22223b;
   color: white;
   height: 100%;
   width: 100%;
 }
 
-#main {
-  position: fixed;
-  width: 100%;
+#root {
+  position: absolute;
   height: 100%;
+  width: 100%;
   left: 0;
   top: 0;
 }
 
-#app {
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.logo {
+  width: 50%;
+  height: auto;
+}
+
+.small-logo-container {
+  margin-left: 240px;
+  padding-top: 40px;
+  width: 140px;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.small-logo {
+  height: 40px;
+  width: auto;
+}
+
+.background {
+  z-index: 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 70%;
   width: 100%;
+}
+
+img.background {
   height: 100%;
+  width: auto;
+  opacity: 50%;
+}
+
+.item {
+  position: relative;
+  height: 60vmin;
+  width: 40%;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.title {
+  padding-top: 8rem;
+  padding-left: 8rem;
+}
+
+.mid-container {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .parent-container {
