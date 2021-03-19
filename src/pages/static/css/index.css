@@ -19,93 +19,6 @@ body {
   width: 100%;
 }
 
-#root {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-}
-
-.center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.logo {
-  width: 50%;
-  height: auto;
-}
-
-.small-logo-container {
-  margin-left: 240px;
-  padding-top: 40px;
-  width: 140px;
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.small-logo {
-  height: 40px;
-  width: auto;
-}
-
-.background {
-  z-index: 0;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  height: 70%;
-  width: 100%;
-}
-
-img.background {
-  height: 100%;
-  width: auto;
-  opacity: 50%;
-}
-
-.item {
-  position: relative;
-  height: 60vmin;
-  width: 40%;
-  -ms-grid-column-align: center;
-      justify-self: center;
-}
-
-.title {
-  padding-top: 8rem;
-  padding-left: 8rem;
-}
-
-.mid-container {
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .parent-container {
   display: -ms-grid;
   display: grid;
@@ -215,13 +128,13 @@ img.background {
   -webkit-transform: skew(-25deg) rotate(30deg);
           transform: skew(-25deg) rotate(30deg);
   background: transparent;
-  bottom: -10%;
-  left: 60%;
+  bottom: -1.5vmin;
+  left: 11vmin;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
-img {
+.tree img {
   width: 13vmin;
 }
 
@@ -267,5 +180,127 @@ img {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+#root {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.logo {
+  width: 50%;
+  height: auto;
+  max-width: 300px;
+}
+
+.small-logo-container {
+  margin-left: 240px;
+  padding-top: 40px;
+  width: 140px;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.small-logo {
+  height: 40px;
+  width: auto;
+}
+
+.background {
+  z-index: 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 70%;
+  width: 100%;
+}
+
+img.background {
+  height: 100%;
+  width: auto;
+  opacity: 50%;
+}
+
+.item {
+  position: relative;
+  height: 60vmin;
+  width: 40%;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.title {
+  padding-top: 8rem;
+  padding-left: 8rem;
+}
+
+.mid-container {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.posAbs {
+  position: absolute;
+}
+
+.menu {
+  z-index: 10;
+  position: absolute;
+  height: 85vh;
+  width: 33vw;
+  background-color: black;
+  right: 10vmin;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-radius: 3vmin;
+  border: 5px solid white;
+  -webkit-animation-name: opacity_zero;
+          animation-name: opacity_zero;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes opacity_zero {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity_zero {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=index.css.map */
