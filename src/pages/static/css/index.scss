@@ -218,7 +218,7 @@ img.background {
   border: 5px solid white;
   animation-name: opacity_zero;
   animation-duration: 3s;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in;
 }
 
 @keyframes opacity_zero {

@@ -1,7 +1,23 @@
 import React from "react";
 import { Grid, Button } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
 
-function HomePage() {
+function HomePage(props) {
+  const history = useHistory();
+
+  const handleCreateNewRoom = () => {
+    const requestOptions = {
+      method: "POST",
+      header: { ContentType: "application/json" },
+    };
+    fetch("/api/create-room", requestOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        // console.log(data);
+        history.push(`/room/${data.host}`);
+      });
+  };
+
   return (
     <>
       <Background />
@@ -24,7 +40,11 @@ function HomePage() {
               </p>
             </Grid>
             <Grid item>
-              <Button variant="contained" color="deafult">
+              <Button
+                variant="contained"
+                color="deafult"
+                onClick={handleCreateNewRoom}
+              >
                 Let's start
               </Button>
             </Grid>

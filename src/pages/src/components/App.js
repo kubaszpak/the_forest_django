@@ -11,14 +11,14 @@ function App(props) {
   };
 
   useEffect(() => {
-    fetch("/api/user-in-room")
+    const requestOptions = {
+      method: "GET",
+      header: { ContentType: "application/json" },
+    };
+    fetch("/api/user-in-room", requestOptions)
       .then((response) => response.json())
       .then((data) => {
-        if (response.ok) {
-          this.setState({
-            roomCode: data.code,
-          });
-        }
+        setRoomCode(data.host);
       });
   });
 
@@ -46,19 +46,5 @@ function App(props) {
     </BrowserRouter>
   );
 }
-
-const handleCreateNewRoom = () => {
-  const requestOptions = {
-    method: "POST",
-    header: { ContentType: "application/json" },
-  };
-  fetch("/api/create-room", requestOptions)
-    .then((response) => response.json())
-    .then((data) => {
-      if (response.ok) {
-        this.props.history.push(`/room/${data.code}`);
-      }
-    });
-};
 
 export default App;

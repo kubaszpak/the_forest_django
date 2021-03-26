@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 export default function Room(props) {
-  const [map, setMap] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0]);
+  const [map, setMap] = useState([0, 0, 0, 0, 1, 0, 0, 0, 0]);
 
   // useEffect(() => {
   //   fetch("/api/get-room" + "?code=" + this.roomCode)

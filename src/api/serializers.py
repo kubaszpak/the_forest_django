@@ -6,3 +6,9 @@ class MapSerializer(serializers.ModelSerializer):
     class Meta:
         model = Map
         fields = '__all__'
+
+
+class CreateMapSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Map
+        fields = ('host',)
