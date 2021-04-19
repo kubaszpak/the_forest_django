@@ -38,8 +38,8 @@ function App(props) {
         />
         <Route
           path="/room/:roomCode"
-          render={(props) => {
-            return <Room {...props} leaveRoomCallback={clearRoomCode} />;
+          render={() => {
+            return <Room leaveRoomCallback={clearRoomCode} />;
           }}
         />
       </Switch>

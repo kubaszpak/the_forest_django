@@ -12,3 +12,9 @@ class CreateMapSerializer(serializers.ModelSerializer):
     class Meta:
         model = Map
         fields = ('host',)
+
+
+class GetMapSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Map
+        fields = ('list_of_buildings',)

@@ -1,21 +1,28 @@
 import React, { useState, useEffect } from "react";
+import { useParams, useHistory } from "react-router-dom";
+import { Grid, Button, RadioGroup, FormControl, FormControlLabel, FormLabel, Radio } from "@material-ui/core";
 
 export default function Room(props) {
-  const [map, setMap] = useState([0, 0, 0, 0, 1, 0, 0, 0, 0]);
+  const [map, setMap] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0]);
+  const { roomCode } = useParams();
+  const history = useHistory();
 
-  // useEffect(() => {
-  //   fetch("/api/get-room" + "?code=" + this.roomCode)
-  //     .then((response) => {
-  //       if (!response.ok) {
-  //         this.props.leaveRoomCallback();
-  //         this.props.history.push("/");
-  //       }
-  //       return response.json();
-  //     })
-  //     .then((data) => {
-  //       setMap(data.map);
-  //     });
-  // });
+  useEffect(() => {
+    fetch("/api/get-room" + "?code=" + roomCode)
+      .then((response) => {
+        if (!response.ok) {
+          props.leaveRoomCallback();
+          history.push('/');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        if (data) {
+          setMap(data.list_of_buildings);
+        }
+      });
+  }, []);
+
   return (
     <>
       <div class="parent-container">
@@ -54,9 +61,24 @@ const Box = ({ id = null, image = 0 }) => {
 
 const Menu = () => {
   return (
-    <div class="menu">
-      <h1>This is the Room Page</h1>
-      {/* <h2>Room code: {props.match.params.roomCode}</h2> */}
-    </div>
+    <>
+      <div class="menu">
+        <FormControl component="fieldset">
+          <FormLabel component="legend" >Room Page</FormLabel>
+          <RadioGroup aria-label="gender" name="gender1">
+            <Grid container spacing={1}>
+              <Grid container item xs={12} spacing={1}>
+                <FormControlLabel value="female" control={<Radio />} label="Female" />
+                <FormControlLabel value="male" control={<Radio />} label="Male" />
+              </Grid>
+              <Grid container item xs={12} spacing={1}>
+                <FormControlLabel value="other" control={<Radio />} label="Other" />
+                <FormControlLabel value="disabled" control={<Radio />} label="(Disabled option)" />
+              </Grid>
+            </Grid>
+          </RadioGroup>
+        </FormControl>
+      </div>
+    </>
   );
 };
